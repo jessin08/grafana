@@ -288,7 +288,7 @@ class Ctrl extends PanelCtrl {
 
     let formattedUrl = this.templateSrv.replace(this.panel.backendUrl);
     if(!formattedUrl.includes('http://') && !formattedUrl.includes('https://')) {
-      formattedUrl = `http://${formattedUrl}`;
+      formattedUrl = `https://${formattedUrl}`;
     }
     if(formattedUrl.slice(-1) === '/') {
       formattedUrl = formattedUrl.slice(0, -1);
