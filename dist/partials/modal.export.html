@@ -1,0 +1,34 @@
+
+<div id="export-modal" class="modal-body">
+  <div class="modal-header">
+    <h2 class="modal-header-title">
+      <i class="fa fa-save"></i>
+      <span class="p-l-1">Export</span>
+    </h2>
+
+    <a class="modal-header-close" ng-click="ctrl.clearRange()">
+      <i class="fa fa-remove"></i>
+    </a>
+  </div>
+  <div class="modal-content">
+    <div class="editor-row">
+      <div class="section gf-form-group">
+        <timepicker
+          ng-if="ctrl.datePickerShow.from"
+          class="timepicker"
+          value="ctrl.rangeOverride"
+          onChange="ctrl.onTimeRangeChange.bind(ctrl)"
+        />
+      </div>
+    </div>
+
+    <div class="gf-form-button-row text-center">
+      <button class="btn gf-form-btn btn-success" type="button" ng-click="ctrl.export(panelId, target)">
+        Add task
+      </button>
+      <button class="btn gf-form-btn btn-inverse" type="button" ng-click="ctrl.clearRange()">
+        Cancel
+      </button>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,60 @@
+<div id="export-manager-panel" class="table-panel-container">
+  <div class="table-panel-header-bg"></div>
+  <div class="table-panel-scroll">
+    <table class="table-panel-table" id="queries">
+      <thead>
+        <tr>
+          <th>
+            <div class="table-panel-table-header-inner">
+              Panel
+            </div>
+          </th>
+          <th>
+            <div class="table-panel-table-header-inner">
+              RefId
+            </div>
+          </th>
+          <th>
+            <div class="table-panel-table-header-inner">
+              Datasource
+            </div>
+          </th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr ng-repeat-start="panel in ctrl.panels"></tr>
+        <tr class="target" ng-repeat-end ng-repeat="target in panel.targets" ng-if="panel.type !== selfType">
+          <td>
+            {{ panel.title }}
+          </td>
+          <td>
+            <span class="template-variable">
+              {{ target.refId }}
+            </span>
+          </td>
+          <td>
+            {{ ctrl.getDatasource(panel) }}
+          </td>
+          <td class="export-button-td" bs-tooltip="panel.datasource === undefined ? 'Datasource is not supported' : null">
+            <button class="btn gf-form-btn btn-primary"
+              ng-class="{'disabled-button': panel.datasource === undefined}"
+              type="button"
+              ng-click="ctrl.showExportModal(panel.id, target)"
+            >
+              <div>Export</div>
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <button class="btn gf-form-btn btn-primary"
+      id="export-button"
+      ng-if="ctrl.panels.length > 0"
+      type="button"
+      ng-click="ctrl.showExportModal(null, null)"
+    >
+      <div>Export all</div>
+    </button>
+  </div>
+</div>

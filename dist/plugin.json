@@ -1,0 +1,25 @@
+{
+  "type": "panel",
+  "name": "Data Exporter",
+  "id": "corpglory-data-exporter-panel",
+  "info": {
+    "description": "Data Exporter Panel",
+    "author": {
+      "name": "CorpGlory",
+      "url": "corpglory.com"
+    },
+    "logos": {
+      "small": "img/logo.png",
+      "large": "img/logo.png"
+    },
+    "keywords": [],
+    "links": [],
+    "screenshots": [],
+    "version": "0.5.1",
+    "updated": "2020-10-06"
+  },
+  "dependencies": {
+    "grafanaVersion": "6.2.0+",
+    "plugins": []
+  }
+}
